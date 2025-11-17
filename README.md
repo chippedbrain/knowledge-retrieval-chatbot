@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Knowledge-Retrieval Chatbot
 
-## Getting Started
+A chatbot application that can answer questions by retrieving knowledge from a custom data source. Built with Next.js, this project lets you plug in your own documents or data, and use an LLM (Large Language Model) to respond intelligently based on that knowledge.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Retrieve and answer questions using documents you provide
+* Easy-to-configure environment variables
+* Web UI built with Next.js
+* Modular architecture so you can extend data sources or LLM backend
+* Ready for local development and production
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Tech Stack
 
-## Learn More
+* **Frontend / Web UI**: Next.js
+* **Backend logic**: LLM provider API - Anthropic 
+* **Environment configuration**: `.env.local` for secrets
+* **Package management**: npm / yarn / pnpm
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔧 Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Prerequisites
 
-## Deploy on Vercel
+* Node.js (version X.Y.Z or higher)
+* npm / yarn / pnpm
+* An API key for your LLM provider (e.g., OpenAI)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Installation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/chippedbrain/knowledge-retrieval-chatbot.git
+   cd knowledge-retrieval-chatbot
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+3. **Set up your environment variables**
+
+   * There's a file named `.env.example` in the repo.
+   * Copy it to `.env.local`:
+
+     ```bash
+     cp .env.example .env.local
+     ```
+   * Open `.env.local` in your editor and add your API key:
+
+     ```
+     API_KEY=your_api_key_here
+     ```
+
+4. **Run the development server**
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+   Then open your browser to [http://localhost:3000](http://localhost:3000) to see the app.
+
+---
+
+## 🧪 Usage
+
+1. Add or configure your document / knowledge source.
+2. Use the chat interface to ask questions.
+3. The bot will retrieve relevant knowledge and rely on the LLM to generate an answer.
+
+---
+
+## ⚙️ Configuration
+
+| Variable | Description               |
+| -------- | ------------------------- |
+| API_KEY  | Your LLM provider API key |
+
+---
+
+## 🔐 Security / Secrets
+
+* **Do not commit your actual `.env.local`** — it is intentionally ignored.
+* Commit only **`.env.example`** with placeholder values.
+
+---
+
+## ❓ FAQ / Troubleshooting
+
+* **Bot not responding or giving weak answers?** Ensure your knowledge source is formatted correctly and your API key is valid.
+* **Changes in `.env.local` not applying?** Restart your dev server.
